@@ -1,0 +1,26 @@
+from Class import Node
+from Class import List
+
+myList = List()
+for i in range(1,11):
+    myList.append(i)
+# print(str(myList) + '\nSize: ' + str(myList.size()))
+# myList.remove(6)
+# print('Removed: ', end ='')
+# print(myList)
+# print('Size: ' + str(myList.size()))
+# myList.addHead(1)
+# print('Head added: ' + str(myList))
+# print('Before 9 is ' + str(myList.before(9)))
+# print('Is 12 in?: ' + str(myList.isIn(12)))
+# myList.removeTail()
+# print('Tail removed: ' + str(myList))
+# print(myList)
+myList.bottomUp(30)
+print('Bottom Upped: ' + str(myList))
+myList.riffle(60)
+print('Riffled: ' + str(myList))
+myList.deRiffle(60)
+print('deRiffled: ' + str(myList))
+myList.deBottomUp(30)
+print('deBottom Upped: ' + str(myList))
