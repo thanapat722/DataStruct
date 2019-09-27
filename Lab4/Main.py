@@ -15,7 +15,7 @@ for i in range(1,11):
 # print('Is 12 in?: ' + str(myList.isIn(12)))
 # myList.removeTail()
 # print('Tail removed: ' + str(myList))
-# print(myList)
+print(myList)
 myList.bottomUp(30)
 print('Bottom Upped: ' + str(myList))
 myList.riffle(60)
