@@ -239,6 +239,21 @@ class LinkedList:
 
     def removeTail(self):
         return self.remove(self.tail.data)
+    
+    def reverse(self):
+        before = None
+        cur = self.head
+        if cur is None:
+            return
+        after = cur.next
+        while after:
+            cur.next = before
+            before = cur
+            cur = after
+            after = after.next
+        cur.next = before
+        self.head = cur
+
 
 a = LinkedList()
 for i in range(0,11):
@@ -247,5 +262,6 @@ a.removeHead()
 a.addHead(12)
 a.remove(4)
 a.removeTail()
+a.reverse()
 print(a,'\nHead:',a.head,'Tail:',a.tail)
 print('Size:',a.size(),'isIn:',a.isIn(5),'isEmpty:',a.isEmpty(),'Before 8 is',a.before(8))
