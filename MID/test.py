@@ -221,18 +221,31 @@ class LinkedList:
             p = p.next
         return None
     
+    # node = self.search(data)
+    #     if node is self.head:
+    #         self.head = node.next
+    #     elif node is self.tail:
+    #         bef = self.before(data)
+    #         bef.next = None
+    #         self.tail = bef
+    #     else:
+    #         self.before(data).next = node.next
+    #     return node
+
     def remove(self, data):
         self.Size -= 1
-        node = self.search(data)
-        if node is self.head:
-            self.head = node.next
-        elif node is self.tail:
-            bef = self.before(data)
-            bef.next = None
-            self.tail = bef
+        removing = self.search(data)
+        if removing is self.head:
+            self.head = removing.next
+        elif removing is self.tail:
+            before = self.before(data)
+            self.before.next = None
+            self.tail = before
         else:
-            self.before(data).next = node.next
-        return node
+            self.before(data).next = removing.next
+        return removing
+
+            
 
     def removeHead(self):
         return self.remove(self.head.data)
