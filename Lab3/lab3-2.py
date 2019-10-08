@@ -22,40 +22,40 @@ def encode(string):
     if string == []:
         return print("Error : Emp\ty String")
     for ele in string:
-        for j in ele:
-            x = ord(ele)
-            y = s2.items[a]
-            if x != 32:
-                if x+y >= ord('a') and x+y <= ord('z') or x+y >= ord('A') and x+y <= ord('Z'):
-                    s3.enQueue(chr(x+y))
-                    a += 1
-                else:
-                    s3.enQueue(chr(x+y - 26))
-                    a += 1
+        # for j in ele:
+        x = ord(ele)
+        y = s2.items[a]
+        if x != 32:
+            if x+y >= ord('a') and x+y <= ord('z') or x+y >= ord('A') and x+y <= ord('Z'):
+                s3.enQueue(chr(x+y))
+                a += 1
             else:
-                s3.enQueue(' ')
-            if a > s2.size()-1:
-                a = 0
+                s3.enQueue(chr(x+y - 26))
+                a += 1
+        else:
+            s3.enQueue(' ')
+        if a > s2.size()-1:
+            a = 0
 
 def decode(string):
     a = 0
     if string == []:
         return print("Error : Empty String")
     for ele in string:
-        for j in ele:
-            x = ord(ele)
-            y = s2.items[a]
-            if x != 32:
-                if x-y >= ord('a') and x-y <= ord('z') or x-y >= ord('A') and x-y <= ord('Z'):
-                    s4.enQueue(chr(x-y))
-                    a += 1
-                else:
-                    s4.enQueue(chr(x-y + 26))
-                    a += 1
+        # for j in ele:
+        x = ord(ele)
+        y = s2.items[a]
+        if x != 32:
+            if x-y >= ord('a') and x-y <= ord('z') or x-y >= ord('A') and x-y <= ord('Z'):
+                s4.enQueue(chr(x-y))
+                a += 1
             else:
-                s4.enQueue(' ')
-            if a > s2.size()-1:
-                a = 0
+                s4.enQueue(chr(x-y + 26))
+                a += 1
+        else:
+            s4.enQueue(' ')
+        if a > s2.size()-1:
+            a = 0
     # if s3.items != s4.items:
     #     s4.items = ["Error : Not Matched!"]
 
